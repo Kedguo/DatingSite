@@ -1,0 +1,9 @@
+.add-button{
+    /*.add-button类创建了一个固定在浏览器窗口右下角（距离底部60像素，距离右侧12像素），宽度和高度均为50像素的圆形按钮*/
+    position: fixed;
+    bottom: 60px;
+    width: 50px;
+    right: 12px;
+    height: 50px;
+    border-radius: 50%;
+}

@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: dating_site
+  profiles:
+      active: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123
+    url: jdbc:mysql://localhost:3307/y
+
+  #失效时间(分钟)
+  session:
+    timeout: 86400
+    store-type: redis
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+  #redis配置
+  redis:
+    database: 2
+    port: 6379
+    host: localhost
+
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+  session:
+      timeout: 2592000
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+  #log-impl:org.apache.ibatis.logging.stdout.StdOutImpl#配置sql日志打印
+
+logging:
+    level:
+      org.springframework.boot.autoconfigure: error
+
+
+global-config:
+    db-config:
+      logic-delete-field: isDelete #全局逻辑删除的实体字段名(since3.3.0,配置后可以忽略不配置步骤2)
+      logic-delete-value: 1 #逻辑已删除值(默认为1)
+      logic-not-delete-value: 0 #逻辑未删除值(默认为0)
